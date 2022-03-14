@@ -1,0 +1,10 @@
+{
+    "extension_name": {
+        "message": "Search Plus",
+        "description": "Allows users to add more search engines in safari"
+    },
+    "extension_description": {
+        "message": "This is the Search Plus extension",
+        "description": "Allows users to add more search engines in safari"
+    }
+}
