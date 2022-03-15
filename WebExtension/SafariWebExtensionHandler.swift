@@ -16,11 +16,30 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@", message as! CVarArg)
 
         let response = NSExtensionItem()
-        
-        // Add UserDefaults support here
+
+        // Default query and system URLs
+        var queryUrl = "https://startpage.com/sp/search?q=%s"
+        var systemUrl = "https://ecosia.org/search?q=%s"
+
+        if let rawQueryEngine = UserDefaults.grouped.string(forKey: "queryEngine") {
+            if let queryEngine = SearchEngine(rawValue: rawQueryEngine) {
+                queryUrl = queryEngine.URL
+            }
+        }
+
+        if let rawSystemEngine = UserDefaults.grouped.string(forKey: "systemEngine") {
+            if let systemEngine = SearchEngine(rawValue: rawSystemEngine) {
+                systemUrl = systemEngine.URL
+            }
+        }
+
+        let disabled = UserDefaults.grouped.bool(forKey: "extensionDisabled")
+
         response.userInfo = [
             SFExtensionMessageKey: [
-                "queryUrl": "https://startpage.com/sp/search?q=%s"
+                "queryUrl": queryUrl,
+                "systemUrl": systemUrl,
+                "disabled": disabled
             ]
         ]
 

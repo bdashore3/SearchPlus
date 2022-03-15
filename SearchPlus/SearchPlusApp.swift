@@ -13,5 +13,6 @@ struct SearchPlusApp: App {
         WindowGroup {
             ContentView()
         }
+        .defaultAppStorage(UserDefaults.grouped)
     }
 }

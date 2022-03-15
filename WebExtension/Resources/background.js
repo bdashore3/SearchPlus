@@ -10,11 +10,13 @@ function handleNavigationEvent(details, queryUrl) {
 
 // Fetch UserDefaults first before redirect
 function getUserDefaults(details) {
-    if (details.url.startsWith("https://ecosia.org/search") || details.url.startsWith("https://www.ecosia.org/search")) {
-        browser.runtime.sendNativeMessage("application.id", function(response) {
-            handleNavigationEvent(details, response.queryUrl)
-        })
-    }
+    browser.runtime.sendNativeMessage("application.id", function(response) {
+        if (details.url.startsWith(response.systemUrl)) {
+            if (!response.disabled) {
+                handleNavigationEvent(details, response.queryUrl)
+            }
+        }
+    })
 }
 
 browser.webNavigation.onBeforeNavigate.addListener(getUserDefaults);

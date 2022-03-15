@@ -8,9 +8,55 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("extensionDisabled") var extensionDisabled: Bool = false
+    @AppStorage("queryEngine") var queryEngine: SearchEngine = SearchEngine(name: "Startpage", URL: "https://startpage.com/sp/search?q=%s")
+    @AppStorage("systemEngine") var systemEngine: SearchEngine = SearchEngine(name: "Google", URL: "https://www.google.com/search")
+
+    @State var showPickerView = false
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                Section(header: Text("Current query URL"),
+                        footer: Text("To set a custom URL, select custom and input the search engine query URL in the textbox. \n\nScheme: https://domain.com/search?q=%s")
+                ) {
+                    TextField("https://domain.com/search?q=%s", text: $queryEngine.URL)
+                        .keyboardType(.URL)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                }
+                .disabled(queryEngine.name != "Custom")
+
+                Section(footer: Text("Set your default safari search engine to override")) {
+                    NavigationLink(isActive: $showPickerView) {
+                        PickerView(items: DefaultEngines, parentEngine: $systemEngine)
+                            .navigationTitle("Default Engines")
+                            .navigationBarTitleDisplayMode(.inline)
+                    } label: {
+                        HStack {
+                            Text("Safari default engine")
+                            Spacer()
+                            Text(systemEngine.name)
+                                .foregroundColor(.gray)
+                        }
+                        .onTapGesture {
+                            showPickerView.toggle()
+                        }
+                    }
+                }
+
+                Section(header: Text("Suggested search engines")) {
+                    PickerView(items: SuggestedEngines, parentEngine: $queryEngine)
+                }
+
+                Section(footer: Text("Turning on this switch disables search redirection, effectively disabling the extension")) {
+                    Toggle(isOn: $extensionDisabled) {
+                        Text("Disable everything")
+                    }
+                }
+            }
+            .navigationTitle("Search Engines")
+        }
     }
 }
 

@@ -21,7 +21,14 @@
 
     "content_scripts": [{
         "js": [ "content.js" ],
-        "matches": [ "*://*.ecosia.org/*" ]
+        "matches": [
+            "*://*.ecosia.org/*",
+            "*://google.com/*",
+            "*://www.google.com/*",
+            "*://search.yahoo.com/*",
+            "*://*.bing.com/*",
+            "*://*.duckduckgo.com/*"
+        ]
     }],
 
     "browser_action": {
