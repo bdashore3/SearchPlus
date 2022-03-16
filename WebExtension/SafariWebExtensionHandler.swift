@@ -19,7 +19,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
         // Default query and system URLs
         var queryUrl = "https://startpage.com/sp/search?q=%s"
-        var systemUrl = "https://ecosia.org/search?q=%s"
+        var systemUrl = "https://www.google.com/search"
 
         if let rawQueryEngine = UserDefaults.grouped.string(forKey: "queryEngine") {
             if let queryEngine = SearchEngine(rawValue: rawQueryEngine) {
