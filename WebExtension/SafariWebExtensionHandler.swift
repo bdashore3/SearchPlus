@@ -5,11 +5,10 @@
 //  Created by Brian Dashore on 3/12/22.
 //
 
-import SafariServices
 import os.log
+import SafariServices
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
-
     func beginRequest(with context: NSExtensionContext) {
         let item = context.inputItems[0] as! NSExtensionItem
         let message = item.userInfo?[SFExtensionMessageKey]
@@ -45,5 +44,4 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
         context.completeRequest(returningItems: [response], completionHandler: nil)
     }
-
 }

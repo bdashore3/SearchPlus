@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("extensionDisabled") var extensionDisabled: Bool = false
-    @AppStorage("queryEngine") var queryEngine: SearchEngine = SearchEngine(name: "", URL: "")
-    @AppStorage("systemEngine") var systemEngine: SearchEngine = SearchEngine(name: "", URL: "")
+    @AppStorage("queryEngine") var queryEngine: SearchEngine = .init(name: "", URL: "")
+    @AppStorage("systemEngine") var systemEngine: SearchEngine = .init(name: "", URL: "")
 
     @State var showPickerView = false
 
@@ -18,8 +18,7 @@ struct ContentView: View {
         NavigationView {
             Form {
                 Section(header: Text("Current query URL"),
-                        footer: Text("To set a custom URL, select custom and input the search engine query URL in the textbox. \n\nScheme: https://domain.com/search?q=%s")
-                ) {
+                        footer: Text("To set a custom URL, select custom and input the search engine query URL in the textbox. \n\nScheme: https://domain.com/search?q=%s")) {
                     TextField("https://domain.com/search?q=%s", text: $queryEngine.URL)
                         .keyboardType(.URL)
                         .disableAutocorrection(true)

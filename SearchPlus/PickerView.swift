@@ -16,14 +16,14 @@ struct PickerView: View {
         List {
             ForEach(items, id: \.self) { item in
                 Button(action: {
-                   parentEngine = item
+                    parentEngine = item
                 }, label: {
                     HStack {
                         Text(item.name)
                         Spacer()
                         if item.name == parentEngine.name {
-                           Image(systemName: "checkmark")
-                               .foregroundColor(.blue)
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.blue)
                         }
                     }
                 })
