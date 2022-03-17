@@ -26,7 +26,7 @@ struct ContentView: View {
                 }
                 .disabled(queryEngine.name != "Custom")
 
-                Section(footer: Text("Set your default safari search engine to override")) {
+                Section(footer: Text("Set your default safari search engine to override.")) {
                     NavigationLink(isActive: $showPickerView) {
                         PickerView(items: DefaultEngines, parentEngine: $systemEngine)
                             .navigationTitle("Default Engines")
@@ -44,11 +44,12 @@ struct ContentView: View {
                     }
                 }
 
-                Section(header: Text("Suggested search engines")) {
+                Section(header: Text("Suggested search engines"),
+                        footer: Text("Select a search engine to redirect to from the list or input a custom query URL.")) {
                     PickerView(items: SuggestedEngines, parentEngine: $queryEngine)
                 }
 
-                Section(footer: Text("Turning on this switch disables search redirection, effectively disabling the extension")) {
+                Section(footer: Text("Turning on this switch disables search redirection, effectively disabling the extension.")) {
                     Toggle(isOn: $extensionDisabled) {
                         Text("Disable everything")
                     }

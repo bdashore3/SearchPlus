@@ -11,7 +11,7 @@ import SwiftUI
 struct SearchPlusApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
         .defaultAppStorage(UserDefaults.grouped)
     }
