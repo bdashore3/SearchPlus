@@ -13,10 +13,11 @@ struct SearchEngine: Codable, Hashable {
 }
 
 // MARK: RawRepresentable conformance. Requires manual encoding/decoding to prevent crashes
+
 extension SearchEngine: RawRepresentable {
     public init?(rawValue: String) {
         guard let data = rawValue.data(using: .utf8),
-            let result = try? JSONDecoder().decode(SearchEngine.self, from: data)
+              let result = try? JSONDecoder().decode(SearchEngine.self, from: data)
         else {
             return nil
         }
@@ -66,5 +67,5 @@ let SuggestedEngines: [SearchEngine] = [
     SearchEngine(name: "Presearch", URL: "https://engine.presearch.org/search?q=%s"),
     SearchEngine(name: "Qwant", URL: "https://www.qwant.com/?q=%s"),
     SearchEngine(name: "Startpage", URL: "https://startpage.com/sp/search?q=%s"),
-    SearchEngine(name: "Custom", URL: ""),
+    SearchEngine(name: "Custom", URL: "")
 ]
