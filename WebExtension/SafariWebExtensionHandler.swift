@@ -17,18 +17,18 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         let response = NSExtensionItem()
 
         // Default query and system URLs
-        var queryUrl = "https://startpage.com/sp/search?q=%s"
-        var systemUrl = "https://www.google.com/search"
+        var queryEngine = SearchEngine(name: "StartPage", URL: "https://startpage.com/sp/search?q=%s")
+        var systemEngine = SearchEngine(name: "Google", URL: "https://www.google.com/search")
 
         if let rawQueryEngine = UserDefaults.grouped.string(forKey: "queryEngine") {
-            if let queryEngine = SearchEngine(rawValue: rawQueryEngine) {
-                queryUrl = queryEngine.URL
+            if let engine = SearchEngine(rawValue: rawQueryEngine) {
+                queryEngine = engine
             }
         }
 
         if let rawSystemEngine = UserDefaults.grouped.string(forKey: "systemEngine") {
-            if let systemEngine = SearchEngine(rawValue: rawSystemEngine) {
-                systemUrl = systemEngine.URL
+            if let engine = SearchEngine(rawValue: rawSystemEngine) {
+                systemEngine = engine
             }
         }
 
@@ -36,8 +36,14 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
         response.userInfo = [
             SFExtensionMessageKey: [
-                "queryUrl": queryUrl,
-                "systemUrl": systemUrl,
+                "queryEngine": [
+                    "name": queryEngine.name,
+                    "url": queryEngine.URL
+                ],
+                "systemEngine": [
+                    "name": systemEngine.name,
+                    "url": systemEngine.URL
+                ],
                 "disabled": disabled
             ]
         ]
