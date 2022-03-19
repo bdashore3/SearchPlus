@@ -28,7 +28,7 @@ struct AboutView: View {
             List {
                 ListRowTextView(leftText: "Version", rightText: UIApplication.shared.appVersion)
                 ListRowTextView(leftText: "Build Number", rightText: UIApplication.shared.appBuild)
-                // ListRowLinkView(text: "Website", link: "https://kingbri.dev/filebridge")
+                ListRowLinkView(text: "Website", link: "https://kingbri.dev")
                 ListRowLinkView(text: "GitHub Repository", link: "https://github.com/bdashore3/SearchPlus")
                 ListRowLinkView(text: "Discord Support", link: "https://discord.gg/pswt7by")
             }
