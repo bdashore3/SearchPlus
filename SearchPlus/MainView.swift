@@ -29,6 +29,7 @@ struct MainView: View {
                 }
                 .tag(Tab.about)
         }
+        .navigationViewStyle(.stack)
     }
 }
 
