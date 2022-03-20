@@ -8,8 +8,8 @@
 import Foundation
 
 struct SearchEngine: Codable, Hashable {
-    var name: String
-    var URL: String
+    var name: String = ""
+    var URL: String = ""
 }
 
 // MARK: RawRepresentable conformance. Requires manual encoding/decoding to prevent crashes

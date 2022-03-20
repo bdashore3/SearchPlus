@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     // Shared extension variables
-    @AppStorage("extensionDisabled") var extensionDisabled: Bool = false
-    @AppStorage("queryEngine") var queryEngine: SearchEngine = .init(name: "", URL: "")
-    @AppStorage("systemEngine") var systemEngine: SearchEngine = .init(name: "", URL: "")
+    @Binding var extensionDisabled: Bool
+    @Binding var queryEngine: SearchEngine
+    @Binding var systemEngine: SearchEngine
 
     // App only variables
     @AppStorage("lastCustomUrl") var lastCustomUrl: String = ""
@@ -69,24 +69,12 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Search Engines")
-            .onAppear {
-                // TODO: Add a simple onboarding screen to select the override and redirect search engines
-                if !UserDefaults.grouped.bool(forKey: "appLaunchedOnce") {
-                    // Make sure grouped UserDefaults is tandem when the user installs the app
-                    queryEngine = SearchEngine(name: "Startpage", URL: "https://startpage.com/sp/search?q=%s")
-                    systemEngine = SearchEngine(name: "Google", URL: "https://www.google.com/search")
-                    extensionDisabled = false
-
-                    // Don't run this again
-                    UserDefaults.grouped.set(true, forKey: "appLaunchedOnce")
-                }
-            }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(extensionDisabled: .constant(false), queryEngine: .constant(SearchEngine()), systemEngine: .constant(SearchEngine()))
     }
 }
