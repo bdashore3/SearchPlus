@@ -17,7 +17,8 @@ struct MainView: View {
     @AppStorage("queryEngine") var queryEngine: SearchEngine = .init()
     @AppStorage("systemEngine") var systemEngine: SearchEngine = .init()
 
-    @State var tabSelection: Tab = .home
+    @State private var tabSelection: Tab = .home
+    @State private var showOnboardingView = false
 
     // Shows tabs on bottom of the screen
     var body: some View {
@@ -33,18 +34,18 @@ struct MainView: View {
                 }
                 .tag(Tab.about)
         }
+        .accentColor(.orange)
         .navigationViewStyle(.stack)
         .onAppear {
-            // TODO: Add a simple onboarding screen to select the override and redirect search engines
             if !UserDefaults.grouped.bool(forKey: "appLaunchedOnce") {
-                // Make sure grouped UserDefaults is tandem when the user installs the app
-                queryEngine = SearchEngine(name: "Startpage", URL: "https://startpage.com/sp/search?q=%s")
-                systemEngine = SearchEngine(name: "Google", URL: "https://www.google.com/search")
-                extensionDisabled = false
+                showOnboardingView.toggle()
 
                 // Don't run this again
                 UserDefaults.grouped.set(true, forKey: "appLaunchedOnce")
             }
+        }
+        .fullScreenCover(isPresented: $showOnboardingView) {
+            OBPagerView(queryEngine: $queryEngine, systemEngine: $systemEngine, showOnboardingView: $showOnboardingView)
         }
     }
 }

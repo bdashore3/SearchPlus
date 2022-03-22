@@ -23,9 +23,16 @@
 		0C6DC87F27DDAB5300850C13 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 0C6DC87E27DDAB5300850C13 /* popup.css */; };
 		0C6DC88127DDAB5300850C13 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 0C6DC88027DDAB5300850C13 /* popup.js */; };
 		0C6DC88527DDAB5300850C13 /* WebExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0C6DC86D27DDAB5300850C13 /* WebExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0C7088D927E970550090EE2C /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 0C7088D827E970550090EE2C /* Introspect */; };
+		0CA59F2E27E903AE00CCDFF2 /* OBFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA59F2D27E903AE00CCDFF2 /* OBFinishedView.swift */; };
+		0CA59F3027E909D800CCDFF2 /* OBStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA59F2F27E909D800CCDFF2 /* OBStartView.swift */; };
 		0CD2448027E01E5900FD9515 /* SearchEngines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2447F27E01E5900FD9515 /* SearchEngines.swift */; };
 		0CDB216727E0D10B003EF122 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB216627E0D10B003EF122 /* PickerView.swift */; };
 		0CDB216827E0E9CC003EF122 /* SearchEngines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2447F27E01E5900FD9515 /* SearchEngines.swift */; };
+		0CF683D427E8C8C000EB8BE6 /* OBPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF683D327E8C8C000EB8BE6 /* OBPagerView.swift */; };
+		0CF683D727E8CACC00EB8BE6 /* OBSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF683D627E8CACC00EB8BE6 /* OBSettingsView.swift */; };
+		0CF683D927E8CF3B00EB8BE6 /* OBDefaultEnginePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF683D827E8CF3B00EB8BE6 /* OBDefaultEnginePickerView.swift */; };
+		0CF683DB27E8D17C00EB8BE6 /* OBUserEnginePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF683DA27E8D17C00EB8BE6 /* OBUserEnginePickerView.swift */; };
 		0CF792D627E37D6600D8D6F3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF792D527E37D6600D8D6F3 /* AboutView.swift */; };
 		0CF792D827E37D7600D8D6F3 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF792D727E37D7600D8D6F3 /* UIApplication.swift */; };
 		0CF792DA27E37DFB00D8D6F3 /* ListRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF792D927E37DFB00D8D6F3 /* ListRowViews.swift */; };
@@ -76,8 +83,14 @@
 		0C6DC87E27DDAB5300850C13 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
 		0C6DC88027DDAB5300850C13 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		0C6DC88227DDAB5300850C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CA59F2D27E903AE00CCDFF2 /* OBFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBFinishedView.swift; sourceTree = "<group>"; };
+		0CA59F2F27E909D800CCDFF2 /* OBStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStartView.swift; sourceTree = "<group>"; };
 		0CD2447F27E01E5900FD9515 /* SearchEngines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngines.swift; sourceTree = "<group>"; };
 		0CDB216627E0D10B003EF122 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		0CF683D327E8C8C000EB8BE6 /* OBPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBPagerView.swift; sourceTree = "<group>"; };
+		0CF683D627E8CACC00EB8BE6 /* OBSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBSettingsView.swift; sourceTree = "<group>"; };
+		0CF683D827E8CF3B00EB8BE6 /* OBDefaultEnginePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBDefaultEnginePickerView.swift; sourceTree = "<group>"; };
+		0CF683DA27E8D17C00EB8BE6 /* OBUserEnginePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBUserEnginePickerView.swift; sourceTree = "<group>"; };
 		0CF792D527E37D6600D8D6F3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0CF792D727E37D7600D8D6F3 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		0CF792D927E37DFB00D8D6F3 /* ListRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowViews.swift; sourceTree = "<group>"; };
@@ -89,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7088D927E970550090EE2C /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +156,7 @@
 		0C6DC85A27DDAB2B00850C13 /* SearchPlus */ = {
 			isa = PBXGroup;
 			children = (
+				0CF683D527E8C93C00EB8BE6 /* Onboarding */,
 				0C6CF01B27DEE74900E10C03 /* SearchPlus.entitlements */,
 				0C6DC85B27DDAB2B00850C13 /* SearchPlusApp.swift */,
 				0C6DC85D27DDAB2B00850C13 /* ContentView.swift */,
@@ -189,6 +204,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		0CF683D527E8C93C00EB8BE6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0CF683D327E8C8C000EB8BE6 /* OBPagerView.swift */,
+				0CF683D627E8CACC00EB8BE6 /* OBSettingsView.swift */,
+				0CF683D827E8CF3B00EB8BE6 /* OBDefaultEnginePickerView.swift */,
+				0CF683DA27E8D17C00EB8BE6 /* OBUserEnginePickerView.swift */,
+				0CA59F2D27E903AE00CCDFF2 /* OBFinishedView.swift */,
+				0CA59F2F27E909D800CCDFF2 /* OBStartView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +236,7 @@
 			);
 			name = SearchPlus;
 			packageProductDependencies = (
+				0C7088D827E970550090EE2C /* Introspect */,
 			);
 			productName = SearchPlus;
 			productReference = 0C6DC85827DDAB2B00850C13 /* SearchPlus.app */;
@@ -258,6 +287,7 @@
 			);
 			mainGroup = 0C6DC84F27DDAB2B00850C13;
 			packageReferences = (
+				0C7088D727E970550090EE2C /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 0C6DC85927DDAB2B00850C13 /* Products */;
 			projectDirPath = "";
@@ -304,11 +334,17 @@
 				0C6DC85E27DDAB2B00850C13 /* ContentView.swift in Sources */,
 				0CF792DC27E3805700D8D6F3 /* MainView.swift in Sources */,
 				0CF792D827E37D7600D8D6F3 /* UIApplication.swift in Sources */,
+				0CF683D427E8C8C000EB8BE6 /* OBPagerView.swift in Sources */,
+				0CF683D727E8CACC00EB8BE6 /* OBSettingsView.swift in Sources */,
+				0CA59F2E27E903AE00CCDFF2 /* OBFinishedView.swift in Sources */,
 				0CD2448027E01E5900FD9515 /* SearchEngines.swift in Sources */,
 				0C6DC85C27DDAB2B00850C13 /* SearchPlusApp.swift in Sources */,
 				0CDB216727E0D10B003EF122 /* PickerView.swift in Sources */,
+				0CF683DB27E8D17C00EB8BE6 /* OBUserEnginePickerView.swift in Sources */,
+				0CF683D927E8CF3B00EB8BE6 /* OBDefaultEnginePickerView.swift in Sources */,
 				0CF792D627E37D6600D8D6F3 /* AboutView.swift in Sources */,
 				0C50301C27DF9A2400AD0811 /* UserDefaults.swift in Sources */,
+				0CA59F3027E909D800CCDFF2 /* OBStartView.swift in Sources */,
 				0CF792DA27E37DFB00D8D6F3 /* ListRowViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0C7088D727E970550090EE2C /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C7088D827E970550090EE2C /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C7088D727E970550090EE2C /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0C6DC85027DDAB2B00850C13 /* Project object */;
 }
