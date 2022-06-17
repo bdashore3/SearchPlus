@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2D5B07285D0D4300E5EC44 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D5B06285D0D4300E5EC44 /* NavView.swift */; };
 		0C50301C27DF9A2400AD0811 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50301B27DF9A2400AD0811 /* UserDefaults.swift */; };
 		0C50301D27DF9A2600AD0811 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50301B27DF9A2400AD0811 /* UserDefaults.swift */; };
 		0C6DC85C27DDAB2B00850C13 /* SearchPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6DC85B27DDAB2B00850C13 /* SearchPlusApp.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C2D5B06285D0D4300E5EC44 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		0C50301B27DF9A2400AD0811 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		0C50301E27DF9AED00AD0811 /* WebExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebExtension.entitlements; sourceTree = "<group>"; };
 		0C6CF01B27DEE74900E10C03 /* SearchPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SearchPlus.entitlements; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				0CF792D527E37D6600D8D6F3 /* AboutView.swift */,
 				0CF792D927E37DFB00D8D6F3 /* ListRowViews.swift */,
 				0CF792DB27E3805700D8D6F3 /* MainView.swift */,
+				0C2D5B06285D0D4300E5EC44 /* NavView.swift */,
 			);
 			path = SearchPlus;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				0CA59F2E27E903AE00CCDFF2 /* OBFinishedView.swift in Sources */,
 				0CD2448027E01E5900FD9515 /* SearchEngines.swift in Sources */,
 				0C6DC85C27DDAB2B00850C13 /* SearchPlusApp.swift in Sources */,
+				0C2D5B07285D0D4300E5EC44 /* NavView.swift in Sources */,
 				0CDB216727E0D10B003EF122 /* PickerView.swift in Sources */,
 				0CF683DB27E8D17C00EB8BE6 /* OBUserEnginePickerView.swift in Sources */,
 				0CF683D927E8CF3B00EB8BE6 /* OBDefaultEnginePickerView.swift in Sources */,

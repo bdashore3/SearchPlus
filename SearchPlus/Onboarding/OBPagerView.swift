@@ -18,7 +18,7 @@ struct OBPagerView: View {
 
     var body: some View {
         VStack {
-            NavigationView {
+            NavView {
                 TabView(selection: $selection) {
                     OBStartView()
                         .tag(0)
