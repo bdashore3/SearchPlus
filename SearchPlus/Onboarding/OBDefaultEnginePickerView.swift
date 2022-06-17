@@ -18,9 +18,8 @@ struct OBDefaultEnginePickerView: View {
                 .padding(.horizontal, 25)
 
             PickerView(items: DefaultEngines, parentEngine: $systemEngine)
-                .frame(maxHeight: 240)
+                .frame(maxHeight: 290)
                 .introspectTableView { tableView in
-                    tableView.contentInset.top = -25
                     tableView.isScrollEnabled = false
                     tableView.bounces = false
                 }
