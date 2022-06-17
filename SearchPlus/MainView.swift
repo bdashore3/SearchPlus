@@ -35,7 +35,6 @@ struct MainView: View {
                 .tag(Tab.about)
         }
         .accentColor(.orange)
-        .navigationViewStyle(.stack)
         .onAppear {
             if !UserDefaults.grouped.bool(forKey: "appLaunchedOnce") {
                 showOnboardingView.toggle()

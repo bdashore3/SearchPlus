@@ -17,12 +17,18 @@ struct OBDefaultEnginePickerView: View {
                 .padding(.top)
                 .padding(.horizontal, 25)
 
-            PickerView(items: DefaultEngines, parentEngine: $systemEngine)
-                .frame(maxHeight: 290)
-                .introspectTableView { tableView in
-                    tableView.isScrollEnabled = false
-                    tableView.bounces = false
-                }
+            if #available(iOS 16, *) {
+                PickerView(items: DefaultEngines, parentEngine: $systemEngine)
+                    .frame(maxHeight: 290)
+                    .scrollDisabled(true)
+            } else {
+                PickerView(items: DefaultEngines, parentEngine: $systemEngine)
+                    .frame(maxHeight: 290)
+                    .introspectTableView { tableView in
+                        tableView.isScrollEnabled = false
+                        tableView.bounces = false
+                    }
+            }
 
             Text("You can find this by navigating to \nSettings > Safari > Search Engine")
                 .padding(.horizontal, 25)

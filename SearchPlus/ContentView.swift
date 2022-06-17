@@ -19,7 +19,7 @@ struct ContentView: View {
     @State var showPickerView = false
 
     var body: some View {
-        NavigationView {
+        NavView {
             Form {
                 Section(header: Text("Current query URL"),
                         footer: Text("To set a custom URL, select custom and input the search engine query URL in the textbox. \n\nScheme: https://domain.com/search?q=%s")) {
