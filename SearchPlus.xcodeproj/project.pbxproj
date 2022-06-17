@@ -558,7 +558,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = WebExtension/WebExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8A74DBQ6S3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebExtension/Info.plist;
@@ -590,7 +590,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = WebExtension/WebExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8A74DBQ6S3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebExtension/Info.plist;
