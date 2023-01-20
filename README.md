@@ -67,4 +67,4 @@ Developer Website: [kingbri.dev](https://kingbri.dev)
 
 Developer Discord: kingbri#6666
 
-Join the support discord here (get the king-updates role to access the channel): [https://discord.gg/pswt7by](https://discord.gg/pswt7by)
+Join the support discord here: [https://kingbri.dev/discord](https://kingbri.dev/discord)
